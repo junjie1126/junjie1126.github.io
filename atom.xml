@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://junjie1126.github.io</id>
+    <title>Junjie’s Blog</title>
+    <updated>2023-02-27T07:55:13.596Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://junjie1126.github.io"/>
+    <link rel="self" href="https://junjie1126.github.io/atom.xml"/>
+    <subtitle>辄思事理，冀尽刍荛</subtitle>
+    <logo>https://junjie1126.github.io/images/avatar.png</logo>
+    <icon>https://junjie1126.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, Junjie’s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[迈腾B8无钥匙进入及启动工作原理文字描述]]></title>
+        <id>https://junjie1126.github.io/post/mai-teng-b8-wu-yao-chi-jin-ru-ji-qi-dong-gong-zuo-yuan-li-wen-zi-miao-shu/</id>
+        <link href="https://junjie1126.github.io/post/mai-teng-b8-wu-yao-chi-jin-ru-ji-qi-dong-gong-zuo-yuan-li-wen-zi-miao-shu/">
+        </link>
+        <updated>2023-02-27T03:24:11.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>​ 一、无钥匙进入及启动汽车</strong></p>
+<p>1．解锁车门</p>
+<pre><code>无钥匙进入车辆的前提条件是，车钥匙必须在车辆的1.5米范围内。用手触摸车门把手（如EX6）时，车门把手内的传感器（G415）被激活，唤醒J965，J965通过天线（如R134、  R135、R165、 R166、 R136）搜索1.5米范围内是否有合法的钥匙，钥匙收到天线的低频信号后，判断正确短闪一下发送位置信息（低频信号），J965收到钥匙信号，进行定位判断钥匙距车门是否小于1.5米，如果是，J965唤醒J519，J519唤醒CAN总线系统。
+
+J519内的中央门锁内部天线R47发送询问信息（高频信号），钥匙收到询问信号长闪一次发送解锁信号（高频信号，相当于按下了解锁按钮），J519判断钥匙信息是否正确，如果正确就解除车身防盗系统，进行如下操作：J519发出车门解锁指令，通过舒适CAN发布指令，驾驶员侧车门控制单元J386根据此信号，控制驾驶员车门中央门锁电机V56解锁左前门锁、闪烁驾驶员侧外后视镜警告灯L131、驱动驾驶员侧后视镜内折电机V121展开左侧后视镜；J386通过LIN线给左后侧车门控制单元J388发出解锁指令，J388控制左后车门中央门锁电机V214解锁左后车门锁。副驾驶员侧车门控制单元J387根据J519的解锁指令，控制V57解锁右前门锁、闪烁L132副驾驶员侧外后视镜警告灯、驱动副驾驶员侧后视镜内折电机V122展开右侧后视镜；通过LIN线给右后侧车门控制单元J389发出解锁指令，J389控制V215解锁右后门锁。
+
+2．进入车内
+
+打开驾驶员侧车门，F2驾驶员侧车门接触开关闭合产生信号（低电位）给J386（其他3个车门同理），J519收到开门信号点亮相应车门打开指示灯；关闭车门F2驾驶员侧车门接触开关断开产生信号（高电位）给J386、J386根据这个信号判断有人进入车内，通过舒适CAN发送信号，J965通过舒适CAN收到J386发出的信号，J965通过车内天线R138、 R139、 R137搜索是否有合法的钥匙进入车内，钥匙指示灯闪烁应答，如果匹配成功，J965控制E378指示灯点亮；J965给J519发送S信号，J519给娱乐设备供电，相当于传统大众车的点火开关一挡。
+
+3．自检过程
+
+不踩制动踏板，第一次按下E378、 J965给J519发出15信号，J915控制15供电继电器J329工作，给仪表供电点亮相关指示灯，唤醒仪表控制单元J285、防盗锁止控制单元J362、电子转向柱锁止控制单元J764、发动机控制单元J623、双离合器变速器机电装置J743。同时R47询问并接收钥匙传递的解锁与防盗的信息，J519经舒适CAN发布信息，J362接收到信息，通过舒适CAN发布解锁指令，电子转向柱锁止控制单元J764收到信息，解锁方向盘；通过网关J533将信号传到驱动CAN，J623根据此信号解除发动机防盗系统；J743根据此信号解除离合器变速器防盗系统，其他相应系统接收此信号解除相应的防盗系统。
+
+J623控制主继电器J217工作，给油泵控制单元J538供电，J623进行自检，如没有故障熄灭相应的指示灯，同时驱动油泵工作1-2s建立工作油压。如有故障，故障指示灯EPC不熄灭。相当于传统大众车的点火开关2挡。
+
+4．启动过程
+
+一切正常准备启动车辆，踩下制动踏板，制动灯信号开关F信号传给J623;选挡杆E313在P/N位置，选挡杆传感器控制单元J587经驱动CAN将信号传给J623、双离合器变速器机电装置J743；按下E378、 J965通过50信号线给J623发出启动指令，J623控制启动继电器J906、 J907工作给启动机B供电。相当于传统大众车的点火开关3挡。J623根据反馈信号监控是否给启动机供电；根据[曲轴位置传感器](http://www.gzweix.com/article/sort0253/sort0487/info-257877.html)信号监控发动机是否工作。
+</code></pre>
+<p><strong>二、用遥控器解锁进入汽车</strong></p>
+<pre><code>用遥控器可以在30-50m的范围内打开车门。按下遥控器解锁按钮，遥控器发出高频信号，J519内的中央门锁内部天线R47接收到信息如果匹配成功，激活J519，解除车身防盗系统，解锁进入车门，进入车的过程与无钥匙进入过程相同。
+</code></pre>
+<p><strong>三、用车钥匙进入汽车</strong></p>
+<pre><code>1．用车钥匙打开驾驶员侧车门
+
+如果车遥控器电池没电了，用车钥匙打开驾驶员侧车门。锁芯中的接触开关F241只有驾驶员侧车门装配，其余车门没有装配。驾驶员在车外顺时针转动机械锁芯时，F241开关导通，然后通过触点直接搭铁，将此高电位拉低至0V，J386根据此信号判断驾驶员的意图，然后控制门锁电机闭锁；当驾驶员逆时针转动机械锁芯时，F241开关通过分压电阻R接通搭铁线路，将此高电位拉低至0.87V左右，J386根据此信号判断驾驶员的意图，然后控制门锁电机开锁；同时经舒适CAN发送信号，J519被激活。
+
+2．应急启动
+
+将遥控器贴在方向盘的右下方转向柱上，防盗锁止系统读识线圈D2读取钥匙匹配信息，信号传给J362，J362经舒适CAN发布解锁解防盗指令。
+
+J519根据J362发出的指令，控制J329工作，15供电继电器工作，给仪表供电点亮相关指示灯，唤醒仪表控制单元J285、 J362、J764、J623、J743。
+
+J764收到信息，解锁方向盘；通过网关J533将信号传到驱动CAN，J623根据此信号解除发动机防盗，J743根据此信号解除白动变速器防盗，其他相应系统接收此信号接解除相应的防盗。J623进行自检，同时可控制燃油泵工作建立工作油压，进入准备启动车辆状态。
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[迈腾B8L车辆无钥匙进入、按遥控解锁及一键启动等控制原理路径]]></title>
+        <id>https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/</id>
+        <link href="https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/">
+        </link>
+        <updated>2022-10-31T08:35:56.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h2 id="1无钥匙进入控制过程">（1）无钥匙进入控制过程</h2>
+<p>车外门把手触摸传感器——J965  唤醒线  J519；J965——室外天线——钥匙（闪烁）——J519——（1. 车门锁开启、后视镜警示灯闪烁；2.油箱盖、后备箱开锁、左右两侧信号灯闪烁；3.仪表上的转向信号灯闪烁）</p>
+<h2 id="2按遥控钥匙解锁控制过程">（2）按遥控钥匙解锁控制过程</h2>
+<p>钥匙（闪烁）——J519——(1. 车门锁开启/上锁、后视镜警示灯闪烁；2.油箱盖、后备箱开锁/上锁、左右两侧信号灯闪烁；3.仪表上的转向信号灯闪烁)</p>
+<h2 id="3打开车门e378背景灯点亮">（3）打开车门E378背景灯点亮</h2>
+<p>F2——J386—— CAN —— J965 供电线——E378背景灯——接地</p>
+<h2 id="4门边状态显示">（4）门边状态显示</h2>
+<p>F2——J386——CAN —— J519——CAN——J285</p>
+<h2 id="5按e378打开点火开关控制">（5）按E378打开点火开关控制</h2>
+<p>E378——J965——唤醒线——J519；J965——CAN—— J285——CAN——J965——室内天线——钥匙（闪烁）——J519——CAN——J285——CAN——J764（方向盘解锁）——CAN—— J965—— 15#1和15#2和S#三条12V线——  J519——CAN ——J285（点亮仪表）</p>
+<h2 id="6应急解锁">（6）应急解锁</h2>
+<p>E378——J965——CAN——J285；D2——J285——CAN——J764。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[10月10日 空调鼓风机]]></title>
+        <id>https://junjie1126.github.io/post/10-yue-10-ri-kong-diao-gu-feng-ji/</id>
+        <link href="https://junjie1126.github.io/post/10-yue-10-ri-kong-diao-gu-feng-ji/">
+        </link>
+        <updated>2022-10-28T12:54:04.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>本次课内容如下：</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6374323"><label class="task-list-item-label" for="task-item-6374323">  鼓风机的控制电路；</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-246925"><label class="task-list-item-label" for="task-item-246925">  汽车空调面板认知；</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8818288"><label class="task-list-item-label" for="task-item-8818288">  布置课堂作业</label></li>
+</ul>
+<p>1、手动空调</p>
+<figure data-type="image" tabindex="1"><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cfc52abf-36a2-47de-8fab-19d457abbfa9/Untitled.png" alt="Untitled" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9fbd1b67-c82f-457a-b2d3-4bf1215acbc9/Untitled.png" alt="Untitled" loading="lazy"></figure>
+<p>手动空调的鼓风机工作路径：</p>
+<p>（1）1挡风的工作路径：12V—鼓风机1档开关—调速电阻R1-R2-R3-SB1—鼓风机—接地；</p>
+<p>（2）2档风的工作路径：12V—鼓风机2档开关—调速电阻R2-R3-SB1-鼓风机—接地；</p>
+<p>（3）3档风的工作路径：12V—鼓风机3档开关—调速电阻R3—SB1—鼓风机—接地；</p>
+<p>（4）4档风的工作路径：12V—鼓风机4档开关—鼓风机—接地。</p>
+<p><strong>检修</strong>？我们思路是怎么样的？1、要检修部件相关的原理图；2、要写出检修部件的工作路径；3、对比分析故障现象（工作路径分析）—可能的原因；4、用工具去检修</p>
+<p>列子：</p>
+<p>一、故障现象</p>
+<p>（1）某车开启空调后，发现鼓风机1-3档无风；</p>
+<p>（2）但是开4档开关有直接出风</p>
+<p>二、工作路径分析</p>
+<p>（1）1挡风无风，说明12V—鼓风机1档开关—调速电阻R1-R2-R3-SB1—鼓风机—接地，工作异常</p>
+<pre><code> （2）2档风无风，说明12V—鼓风机2档开关—调速电阻R2-R3-SB1—鼓风机—接地，工作异常
+
+ （3）3档风无风，说明12V—鼓风机3档开关—调速电阻R3-SB1—鼓风机—接地，工作异常
+
+ （4）4档有风出，说明12V—鼓风机4档开关—鼓风机—接地，工作正常。
+</code></pre>
+<p>三、可能的原因</p>
+<p>（1）调速电阻内部R3-SB1出了故障</p>
+<p>补充：要测某车调速电阻，要明确这个调速电阻的安装位置？如何找这个调速电阻？</p>
+<p>（1）百度、必用、搜索关键词『18年大众速腾鼓风机电阻』，搜索出其实物图片以及安装位置</p>
+<p>（2）使用这款车维修手册</p>
+<p>四、检修过程</p>
+<p>用万用表测调速电阻内部的电阻值</p>
+<p>半自动空调鼓风机电路，以速腾车为列</p>
+<figure data-type="image" tabindex="3"><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ba8b2f1a-2ddb-4453-804c-42676e911d2f/Untitled.png" alt="Untitled" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5f75b062-3d1c-4698-96b8-fa877e816178/Untitled.png" alt="Untitled" loading="lazy"></figure>
+<p>全自动空调</p>
+<figure data-type="image" tabindex="5"><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5f39220d-7bfe-43bb-bd95-30488ad1d5ec/Untitled.png" alt="Untitled" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5dddd8b4-3707-4cb5-9ab1-a07d8b42c9a7/Untitled.png" alt="Untitled" loading="lazy"></figure>
+<p>上述电路图的B7鼓风机控制路径？</p>
+<p>（1）SC38—J126—-接地；</p>
+<p>（2）鼓风机档位开关—-J255—-J126;</p>
+<p>（3）J126—V2—-J126—接地</p>
+]]></content>
+    </entry>
+</feed>

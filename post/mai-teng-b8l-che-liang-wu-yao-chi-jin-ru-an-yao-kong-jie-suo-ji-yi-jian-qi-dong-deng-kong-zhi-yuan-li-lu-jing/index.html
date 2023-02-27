@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+<title>
+    Junjie’s Blog
+</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://junjie1126.github.io">
+
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="向阳而长">
+<meta name="description" content="">
+<meta name="keywords" content="辄思事理，冀尽刍荛">
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/css/style.min.css" />
+
+<link rel="stylesheet" href="https://junjie1126.github.io/styles/main.css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.2/assets/media/css/tags.css" />
+
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+	<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/script/tocbot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/script/script.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/script/icon.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.2/assets/media/script/loading.js" />
+
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/atelier-estuary-dark.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
+                
+			<!-- 百度统计 -->
+		    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/live2d/css/live2d.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo">
+                <a href="https://junjie1126.github.io">
+                    Junjie’s Blog
+                </a>
+            </div>
+
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="https://xyezh.com">
+                        🎏 首页
+                    </a>
+                    
+                    <a class="menu-item" href="https://xyezh.com/posts/">
+                        ✍🏻 文章列表
+                    </a>
+                    
+                    <a class="menu-item" href="/archives">
+                        📔 归档
+                    </a>
+                    
+                    <a class="menu-item" href="/tags">
+                        🔖 标签 
+                    </a>
+                    
+                    <a class="menu-item" href="https://xyezh.com/post/about/">
+                        🚀 关于 
+                    </a>
+                    
+                        <input id="switch_default" type="checkbox" class="switch_default">
+                        <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+            <form id="gridea-search-form" data-update="1677468360852" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="🔍Search..." style = "-webkit-border-radius:8px;
+				   -moz-border-radius:8px;
+				   -ms-border-radius:8px;
+				   -o-border-radius:8px;
+				   border-radius:8px;
+				   border:1px solid #e7f3f9;
+				   outline:none;
+				   padding:7px 0px;
+				   BACKGROUND-COLOR: transparent">
+            </form>
+        </div>
+
+    </nav>
+
+    
+        <nav class="navbar-mobile" id="nav-mobile">
+            <div class="container">
+                <div class="navbar-header">
+                    <div>
+                        <a href="https://junjie1126.github.io">
+                            Junjie’s Blog
+                        </a>
+                        <!--en-->
+                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
+                        <!--zh-->
+                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;\u6697\u9ED1</a>
+                    </div>
+                    <form id="gridea-search-form" data-update="1677468360852" action="/search/index.html">
+                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="🔍Search..." style = "-webkit-border-radius:8px;
+				   -moz-border-radius:8px;
+				   -ms-border-radius:8px;
+				   -o-border-radius:8px;
+				   border-radius:8px;
+				   border:1px solid #62a3d3;
+				   outline:none;
+				   padding:7px 0px;
+				   BACKGROUND-COLOR: transparent">
+                    </form>
+                    <!--en-->
+                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
+                    <!--zh-->
+                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
+
+                </div>
+                <div class="menu" id="mobile-menu">
+                    
+                        <a class="menu-item" href="https://xyezh.com">
+                            🎏 首页
+                        </a>
+                        
+                        <a class="menu-item" href="https://xyezh.com/posts/">
+                            ✍🏻 文章列表
+                        </a>
+                        
+                        <a class="menu-item" href="/archives">
+                            📔 归档
+                        </a>
+                        
+                        <a class="menu-item" href="/tags">
+                            🔖 标签 
+                        </a>
+                        
+                        <a class="menu-item" href="https://xyezh.com/post/about/">
+                            🚀 关于 
+                        </a>
+                        
+                </div>
+            </div>
+        </nav>
+</header>
+
+<style>
+input:focus{
+/* 
+            outline: 0;
+	    border: 1px solid #f95d5d;
+	    box-shadow: 0px 0px 10px 0px #f95d5d;
+*/
+	    border-style:solid;  
+            border-color: #03a9f4;  
+            box-shadow: 0 0 15px #03a9f4;
+  }
+</style>
+
+<script>
+
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementById("menu-toggle-en");
+        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
+
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.display != "none") {
+            if (toggleMenu.classList.contains("active")) {
+                toggleMenu.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        } else if (toggleMenu_zh.display != "none") {
+            if (toggleMenu_zh.classList.contains("active")) {
+                toggleMenu_zh.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu_zh.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        }
+
+    }
+</script>
+
+        <div class="main">
+            <div class="container">
+                <article class="post-wrap">
+                    <header class="post-header">
+                        <h1 class="post-title">
+                            迈腾B8L车辆无钥匙进入、按遥控解锁及一键启动等控制原理路径
+                        </h1>
+                        <!--en-->
+                        <div class="post-meta en">
+                            Author:
+                            <a itemprop="author" rel="author" href="/">
+                            向阳而长
+<!--
+                                Junjie’s Blog
+-->
+                            </a>
+                            <span class="post-time">
+                                Date: <a href="#">2022-10-31</a>
+                            </span>
+				<span class="post-readtime">Reading Time:<a href="#">1.0 mins</a></span>
+                                <span class="post-words">words:<a href="#">252</a></span>
+                            
+                            <span class="post-category">
+                                Category:
+                                
+                                <a href="https://junjie1126.github.io/tag/O1EyDRTa4/">迈腾B8</a>
+                                
+                                <a href="https://junjie1126.github.io/tag/a7QSxi7Mt/">无钥匙进入</a>
+                                
+                            </span>
+                            
+
+<!-- 分享 -->
+				<span style="margin-right:15px">
+				<i class="post-share"></i>
+				<span>share:</span>
+				<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/"><i class="fa fa-qrcode"></i></a>
+				<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/&sharesource=qzone&title=迈腾B8L车辆无钥匙进入、按遥控解锁及一键启动等控制原理路径&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
+				<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/&sharesource=weibo&title=迈腾B8L车辆无钥匙进入、按遥控解锁及一键启动等控制原理路径 + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+				</span>
+
+                        </div>
+                        <!--zh-->
+                        <div class="post-meta zh">
+                            &#x4F5C;&#x8005;:
+                            <a itemprop="author" rel="author" href="/">				
+                            向阳而长
+<!--
+                                Junjie’s Blog
+-->
+                            </a>
+                            <span class="post-time">&#x65E5;&#x671F;: <a href="#">2022-10-31</a></span>
+			    <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a href="#">1.0 &#x5206;&#x949F;</a></span>
+                                <span class="post-words">&#x5B57;&#x6570;:<a href="#">252</a></span>
+                            
+                            <span class="post-category">&#x5206;&#x7C7B;:
+                                
+                                <a href="https://junjie1126.github.io/tag/O1EyDRTa4/">迈腾B8</a>
+                                
+                                <a href="https://junjie1126.github.io/tag/a7QSxi7Mt/">无钥匙进入</a>
+                                
+                            </span>
+                            
+<!-- 分享 -->
+				<span style="margin-right:15px">
+				<i class="post-share"></i>
+				<span>&#x5206;&#x4EAB;:</span>
+				<a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/"><i class="fa fa-qrcode"></i></a>
+				<a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/&sharesource=qzone&title=迈腾B8L车辆无钥匙进入、按遥控解锁及一键启动等控制原理路径&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
+				<a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/&sharesource=weibo&title=迈腾B8L车辆无钥匙进入、按遥控解锁及一键启动等控制原理路径 + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+				</span>
+
+                        </div>
+                    </header>
+                    <div class="post-content">
+                        <!-- more -->
+<h2 id="1无钥匙进入控制过程">（1）无钥匙进入控制过程</h2>
+<p>车外门把手触摸传感器——J965  唤醒线  J519；J965——室外天线——钥匙（闪烁）——J519——（1. 车门锁开启、后视镜警示灯闪烁；2.油箱盖、后备箱开锁、左右两侧信号灯闪烁；3.仪表上的转向信号灯闪烁）</p>
+<h2 id="2按遥控钥匙解锁控制过程">（2）按遥控钥匙解锁控制过程</h2>
+<p>钥匙（闪烁）——J519——(1. 车门锁开启/上锁、后视镜警示灯闪烁；2.油箱盖、后备箱开锁/上锁、左右两侧信号灯闪烁；3.仪表上的转向信号灯闪烁)</p>
+<h2 id="3打开车门e378背景灯点亮">（3）打开车门E378背景灯点亮</h2>
+<p>F2——J386—— CAN —— J965 供电线——E378背景灯——接地</p>
+<h2 id="4门边状态显示">（4）门边状态显示</h2>
+<p>F2——J386——CAN —— J519——CAN——J285</p>
+<h2 id="5按e378打开点火开关控制">（5）按E378打开点火开关控制</h2>
+<p>E378——J965——唤醒线——J519；J965——CAN—— J285——CAN——J965——室内天线——钥匙（闪烁）——J519——CAN——J285——CAN——J764（方向盘解锁）——CAN—— J965—— 15#1和15#2和S#三条12V线——  J519——CAN ——J285（点亮仪表）</p>
+<h2 id="6应急解锁">（6）应急解锁</h2>
+<p>E378——J965——CAN——J285；D2——J285——CAN——J764。</p>
+
+                    </div>
+                     <div class="post-toc">
+                            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1%E6%97%A0%E9%92%A5%E5%8C%99%E8%BF%9B%E5%85%A5%E6%8E%A7%E5%88%B6%E8%BF%87%E7%A8%8B">（1）无钥匙进入控制过程</a></li>
+<li><a href="#2%E6%8C%89%E9%81%A5%E6%8E%A7%E9%92%A5%E5%8C%99%E8%A7%A3%E9%94%81%E6%8E%A7%E5%88%B6%E8%BF%87%E7%A8%8B">（2）按遥控钥匙解锁控制过程</a></li>
+<li><a href="#3%E6%89%93%E5%BC%80%E8%BD%A6%E9%97%A8e378%E8%83%8C%E6%99%AF%E7%81%AF%E7%82%B9%E4%BA%AE">（3）打开车门E378背景灯点亮</a></li>
+<li><a href="#4%E9%97%A8%E8%BE%B9%E7%8A%B6%E6%80%81%E6%98%BE%E7%A4%BA">（4）门边状态显示</a></li>
+<li><a href="#5%E6%8C%89e378%E6%89%93%E5%BC%80%E7%82%B9%E7%81%AB%E5%BC%80%E5%85%B3%E6%8E%A7%E5%88%B6">（5）按E378打开点火开关控制</a></li>
+<li><a href="#6%E5%BA%94%E6%80%A5%E8%A7%A3%E9%94%81">（6）应急解锁</a></li>
+</ul>
+</li>
+</ul>
+
+                     </div>
+                    <section class="post-copyright en">
+                        <!--en-->
+                        <p class="copyright-item">
+                            <span>Author:</span>
+			    <span>向阳而长</span>
+<!--
+                            <span>Junjie’s Blog</span>
+-->
+
+                        </p>
+
+                        <p class="copyright-item">
+                            <span>Permalink:</span>
+                            <span><a href="https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/">https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/</a></span>
+                        </p>
+
+                        <p class="copyright-item">
+                            <span>License:</span>
+                            <span>MIT License</span>
+                        </p>
+                    </section>
+                    <section class="post-copyright zh">
+                        <!--zh-->
+                        <p class="copyright-item ">
+                            <span>&#x4F5C;&nbsp;&nbsp;&nbsp;&#x8005;:</span>
+			    <span>向阳而长</span>
+<!--
+			    <span>Junjie’s Blog</span>
+-->
+
+                        </p>
+
+                        <p class="copyright-item">
+                            <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                            <span><a href="https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/">https://junjie1126.github.io/post/mai-teng-b8l-che-liang-wu-yao-chi-jin-ru-an-yao-kong-jie-suo-ji-yi-jian-qi-dong-deng-kong-zhi-yuan-li-lu-jing/</a></span>
+                        </p>
+
+                        <p class="copyright-item">
+                            <span>&#x534F;&nbsp;&nbsp;&nbsp;&#x8BAE;:</span>
+                            <span>MIT License</span>
+                        </p>
+                    </section>
+                    <!--en-->
+                    <section class="post-tags en">
+                        <div>
+                            <span>Tag(s):</span>
+                            <span class="tag">
+                                
+                                
+                                <a href="https://junjie1126.github.io/tag/O1EyDRTa4/"># 迈腾B8</a>
+                                
+                                <a href="https://junjie1126.github.io/tag/a7QSxi7Mt/"># 无钥匙进入</a>
+                                
+                                
+                            </span>
+                        </div>
+                        <div>
+                            <a href="javascript:window.history.back();">back</a>
+<!--
+                            <span>&dot;</span>
+                            <a href="#">home</a>
+-->
+                        </div>
+                    </section>
+                    <!--zh-->
+                    <section class="post-tags zh">
+                        <div>
+                            <span>&#x6807;&#x7B7E;:</span>
+                            <span class="tag">
+                                
+                                
+                                <a href="https://junjie1126.github.io/tag/O1EyDRTa4/"># 迈腾B8</a>
+                                
+                                <a href="https://junjie1126.github.io/tag/a7QSxi7Mt/"># 无钥匙进入</a>
+                                
+                                
+                            </span>
+                        </div>
+                        <div>
+                            <a href="javascript:window.history.back();">
+                                &#x8FD4;&#x56DE;</a>
+<!--
+                            <span>&dot;</span>
+                            <a href="#">&#x4E3B;&#x9875;</a>
+-->
+                        </div>
+                    </section>
+
+                    <section class="post-nav">
+	               
+		       <a class="prev" rel="prev" href="https://junjie1126.github.io/post/mai-teng-b8-wu-yao-chi-jin-ru-ji-qi-dong-gong-zuo-yuan-li-wen-zi-miao-shu/">
+		           迈腾B8无钥匙进入及启动工作原理文字描述
+		       </a>
+		       
+                        
+                        <a class="next" rel="next" href="https://junjie1126.github.io/post/10-yue-10-ri-kong-diao-gu-feng-ji/">
+                            10月10日 空调鼓风机
+                        </a>
+                        
+                    </section>
+
+	<div class="reward"><div class="reward-button">赏<span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" alt = "support" src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/images/alipay.png"><b>支付宝</b> </span> <span class="wechat-code"> <img alt ="support" class="wechat-img" src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/images/wechat.png"><b>微信</b> </span> </span></div></div>
+
+		<div id="vcomments"></div>
+                <script>
+                   new Valine({
+                   el: '#vcomments',
+                   appId: '',
+                   appKey: '',
+                   path: window.location.pathname,
+                   pageSize: 30,
+                   avatar:'mm',
+                   notify:true,
+                   placeholder: '评论前请填写好昵称👆生成头像请到https://cn.gravatar.com/官网注册:D'
+                             })
+                   </script>
+<!--
+		<div id="vlaine-comment"></div>
+		<script type="application/javascript" src="https://unpkg.com/valine"></script>
+		<script type="application/javascript">
+		new Valine({
+                   el: '#vlaine-comment',
+                   appId: '',
+                   appKey: '',
+                   path: window.location.pathname,
+                   pageSize: 30,
+                   avatar:'mm',
+                   notify:true,
+                   placeholder: '评论前请填写好昵称👆生成头像请到https://cn.gravatar.com/官网注册:D'
+                             })
+                   </script>
+-->
+
+		</article>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+        		   
+		
+<footer id="footer" class="footer" style="height: 0px">
+
+            <div class="copyright">
+                
+                    <b id="hitokoto"></b><br>
+                    <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
+            <path
+                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
+                fill="#93b5cf"></path>
+        </svg>
+
+                    Junjie’s Blog &copy;Copyright
+                        <script>
+                            var date = new Date();
+                            document.write("" + date.getFullYear());
+                        </script> <img src="https://i.loli.net/2020/03/31/kG71rUoEW5YQq4h.gif"  alt="dandan" />
+                        | 本站已经运行了
+                <strong><script type="text/javascript">		
+
+                var urodz= new Date("2022/11/1");
+                var now = new Date();
+                var ile = now.getTime() - urodz.getTime();
+                var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+                document.write(+dni)
+                </script>
+                </strong>天 | 🗞
+		<a class="rss" href="https://junjie1126.github.io/atom.xml" target="_blank"><strong>RSS</strong></a>
+            </div>
+
+<!-- commentTyping -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.2/assets/media/script/commentTyping.js"></script>
+
+<!-- Click loveHeart -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xiangyi715/Gridea-Chic-Unique@1.0.3/assets/media/script/love.js"></script>
+        </footer>
+
+        
+
+                <script>
+			
+
+                    
+//                    hitokoto();
+                    hljs.initHighlighting();
+		    console.clear();
+                    console.log("\n %c \u26a1Theme:Chic-Unique Author's Blog:https://github.com/xiangyi715  Write By xiangyi  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
+</script>
+                
+
+    </div>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+<script color="0,0,0" opacity="0.4" count="10" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+<script>
+    scroll();
+</script>
+
+
+<!--返回顶部-->
+<body id="top">
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+</body>
+
+<style>
+	p#back-to-top {
+		position: fixed;
+		bottom: 50px;
+		right: 50px;
+	}
+	
+	p#back-to-top a {
+		text-align: center;
+		text-decoration: none;
+		color: #d1d1d1;
+		display: block;
+		width: 30px;
+	    /*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/
+		-moz-transition: color 2s;
+		-webkit-transition: color 2s;
+		-o-transition: color 2s;
+	}
+	p#back-to-top a:hover {
+		color: #ff6666;
+	}
+	p#back-to-top a span {
+		background: url(https://i.loli.net/2020/03/13/EwViLWsXlIcgOzm.png) no-repeat center center;
+		border-radius: 8px;
+		display: block;
+		height: 55px;
+		width: 30px;
+		margin-bottom: 8px;
+	      /*使用CSS3中的transition属性给<span>标签背景颜色添加渐变效果*/
+		-moz-transition: background 2s;
+		-webkit-transition: background 2s;
+		-o-transition: background 2s;
+	}
+	
+	#back-to-top a:hover span {
+		background: url(https://i.loli.net/2020/03/13/IiApotjMvyOnJEH.png) no-repeat center center;
+	}
+</style>
+
+<script>
+$(document).ready(function() {
+    //首先将#back-to-top隐藏
+    $("#back-to-top").hide();
+ 
+    //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+    $(function() {
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 100) {
+                $("#back-to-top").fadeIn(1500);
+            }
+            else {
+                $("#back-to-top").fadeOut(1500);
+            }
+        });
+        //当点击跳转链接后，回到页面顶部位置
+        $("#back-to-top").click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            },
+            500);
+            return false;
+        });
+    });
+});
+</script>
+
+<!--
+<style>
+	.backToTop {
+	display: none;
+	width: 18px;
+	line-height: 1.2;
+	padding: 5px 0;
+	background-color: #000;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	position: fixed;
+	_position: absolute;
+	right: 10px;
+	bottom: 100px;
+	_bottom: "auto";
+	cursor: pointer;
+	opacity: .6;
+	filter: Alpha(opacity = 60);
+}
+</style>
+<script>
+(function() {
+    var $backToTopTxt = "返回顶部"
+    $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body")).text($backToTopTxt)
+	.attr("title", $backToTopTxt).click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        },120);
+    })
+    $backToTopFun = function() {
+        var st = $(document).scrollTop(),
+        winh = $(window).height(); (st > 0) ? $backToTopEle.show() : $backToTopEle.hide();
+        //IE6下的定位
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() {
+        $backToTopFun();
+    });
+})();
+</script>
+-->
+
+</html>
